@@ -1,0 +1,38 @@
+rules:
+
+- name: Square Access Token
+  id: np.square.1
+
+  pattern: '(?i)\b(sq0atp-[a-z0-9_-]{22})\b'
+
+  categories:
+  - api
+  - secret
+
+  examples:
+
+  - |
+      var applicationId = 'sq0idp-r34HdSnJVWaCesH3dnJrGA';
+
+
+
+- name: Square OAuth Secret
+  id: np.square.2
+
+  pattern: '(?i)\b(sq0csp-[a-z0-9_-]{43})\b'
+
+  categories:
+  - api
+  - secret
+
+  examples:
+  - |
+
+      sandbox_app_id: sandbox-sq0idp-wWAaCesVx0PhRbXkdUUg9Q
+
+      production_app_id: sq0idp-wWACO1oVx0aCesXkdUUg9Q
+  - |
+      private String accessTokenEndpoint = "https://connect.squareup.com/oauth2/token";
+      private String baseURL = "https://connect.squareup.com";
+      private String clientId = "sq0idp-Ux0S-9iMfaCeszTkDpSjDw";
+

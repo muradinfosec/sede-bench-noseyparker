@@ -1,0 +1,96 @@
+rules:
+
+- name: Shopify Domain
+  id: np.shopify.1
+
+  categories:
+  - identifier
+
+  pattern: |
+    (?x)
+    \b
+    (
+      (?:[a-zA-Z0-9-]+\.)* [a-zA-Z0-9-]+ \.myshopify\.com
+    )
+    \b
+
+  references:
+  - https://help.shopify.com/en/manual/domains
+
+  examples:
+  - 'handsomestranger.myshopify.com'
+  - 'store.handsomestranger.myshopify.com'
+
+
+- name: Shopify App Secret
+  id: np.shopify.2
+
+  categories:
+  - api
+  - secret
+
+  pattern: '\b(shpss_[a-fA-F0-9]{32})\b'
+
+  references:
+  - https://shopify.dev/apps/auth
+  - https://shopify.dev/changelog/app-secret-key-length-has-increased
+
+  examples:
+  - |
+      SHOPIFY_API_KEY='66eaacb546afcad32162d40acb6bd2b0'
+
+  - |
+      SHOPIFY_API_KEY: 38d5b9a8b6c0a3d3ad3f2c422c77db80
+
+
+
+- name: Shopify Access Token (Public App)
+  id: np.shopify.3
+  pattern: '\b(shpat_[a-fA-F0-9]{32})\b'
+
+  categories:
+  - api
+  - secret
+
+  references:
+  - https://shopify.dev/apps/auth
+  - https://shopify.dev/changelog/length-of-the-shopify-access-token-is-increasing
+
+  examples:
+  - |
+      include('layouts/header.php');
+      $shop = $_GET['shop'];
+
+      $query = array(
+
+
+- name: Shopify Access Token (Custom App)
+  id: np.shopify.4
+  pattern: '\b(shpca_[a-fA-F0-9]{32})\b'
+
+  categories:
+  - api
+  - secret
+
+  references:
+  - https://shopify.dev/apps/auth
+  - https://shopify.dev/changelog/length-of-the-shopify-access-token-is-increasing
+
+  examples:
+
+
+
+- name: Shopify Access Token (Legacy Private App)
+  id: np.shopify.5
+  pattern: '\b(shppa_[a-fA-F0-9]{32})\b'
+
+  categories:
+  - api
+  - secret
+
+  references:
+  - https://shopify.dev/apps/auth
+  - https://shopify.dev/changelog/length-of-the-shopify-access-token-is-increasing
+
+  examples:
+

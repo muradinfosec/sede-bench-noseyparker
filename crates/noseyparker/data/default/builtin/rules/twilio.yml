@@ -1,0 +1,23 @@
+rules:
+
+- name: Twilio API Key
+  id: np.twilio.1
+
+  pattern: '(?i)twilio.{0,20}\b(sk[a-f0-9]{32})\b'
+
+  categories: [api, fuzzy, secret]
+
+  examples:
+  - |
+
+
+      const twilioApiKeySecret = 'l6LUelKF2BUtMLace5oShZSmRppadYqI'
+  - |
+      // https://www.twilio.com/console/video/dev-tools/api-keys
+
+      'API_KEY'          => env('TWILIO_API_KEY', 'wbTs1SUt6Aace5eKeNCxuYvJa6PhaRd0')
+
+  references:
+  - https://www.twilio.com/docs/usage/api
+  - https://www.twilio.com/docs/usage/api#authenticate-with-http
+  - https://www.twilio.com/docs/usage/api#authenticate-using-the-twilio-sdks

@@ -1,0 +1,21 @@
+rules:
+
+- name: RubyGems API Key
+  id: np.rubygems.1
+
+  pattern: |
+    (?x)(?i)
+    \b
+    (rubygems_[a-f0-9]{48})
+    \b
+
+  categories: [api, secret]
+
+  references:
+  - https://guides.rubygems.org/rubygems-org-api/
+  - https://guides.rubygems.org/api-key-scopes/
+
+  examples:
+  - |
+
+             https://rubygems.org/api/v1/web_hooks.json
